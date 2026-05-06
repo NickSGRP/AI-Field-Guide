@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D.R.A.F.T. — Define Your AI Dream</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <span class="eyebrow">A field guide for builders</span>
+    <h1><span class="letter">D</span>.<span class="letter">R</span>.<span class="letter">A</span>.<span class="letter">F</span>.<span class="letter">T</span>.</h1>
+    <p class="tagline">Five questions to define your AI dream — before you build it.</p>
+  </header>
+
+  <div class="project-bar" id="projectBar">
+    <span class="project-bar-label">Project</span>
+    <input type="text" class="project-name-input" id="projectNameMini" placeholder="Untitled AI project">
+  </div>
+
+  <div class="progress-bar" id="progressBar" style="display: none;">
+    <div class="progress-step" data-step="1">
+      <div class="progress-letter">D</div>
+      <div class="progress-label">Destination</div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+    <div class="progress-step" data-step="2">
+      <div class="progress-letter">R</div>
+      <div class="progress-label">Records</div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+    <div class="progress-step" data-step="3">
+      <div class="progress-letter">A</div>
+      <div class="progress-label">Autonomy</div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+    <div class="progress-step" data-step="4">
+      <div class="progress-letter">F</div>
+      <div class="progress-label">Fit</div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+    <div class="progress-step" data-step="5">
+      <div class="progress-letter">T</div>
+      <div class="progress-label">Transfer</div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <!-- INTRO -->
+    <div id="intro" class="intro-screen active">
+      <div class="q-letter-row">
+        <span class="q-meta">Start here · 10 minutes · think out loud</span>
+      </div>
+      <div class="q-keyword">Define your AI dream.</div>
+      <div class="q-question">Five questions. Your own words. A clear build plan and next step.</div>
+
+      <div class="intro-letters">
+        <div class="intro-letter"><div class="big">D</div><div class="word">Destination</div><div class="micro">Who's it for?</div></div>
+        <div class="intro-letter"><div class="big">R</div><div class="word">Records</div><div class="micro">What data?</div></div>
+        <div class="intro-letter"><div class="big">A</div><div class="word">Autonomy</div><div class="micro">How much trust?</div></div>
+        <div class="intro-letter"><div class="big">F</div><div class="word">Fit</div><div class="micro">Where does it sit?</div></div>
+        <div class="intro-letter"><div class="big">T</div><div class="word">Transfer</div><div class="micro">Who takes it on?</div></div>
+      </div>
+
+      <div class="intro-body">
+        Most AI projects don't fail because the tech doesn't work. They fail because the build started before the
+        thinking did. D.R.A.F.T. is a worksheet — pick the option that fits, then write a sentence or two
+        about <em>your</em> specific case. At the end, you'll see how complex your build actually is, who you'll need
+        to make it happen, and how to scope it down (or up) until it feels right.
+      </div>
+
+      <div class="intro-name-prompt">
+        <div class="intro-name-label">First, name your project</div>
+        <input type="text" class="intro-name-input" id="projectNameMain" placeholder="e.g. Client letter drafter, BAS commentary helper, audit research bot">
+      </div>
+
+      <div class="intro-cta">
+        <button class="btn btn-primary" id="startBtn">Start drafting →</button>
+      </div>
+    </div>
+
+    <!-- Q1: DESTINATION -->
+    <div class="question-screen" data-question="1">
+      <div class="q-letter-row"><span class="q-big-letter">D</span><span class="q-meta">Question 1 of 5 · Destination</span></div>
+      <div class="q-keyword">Destination</div>
+      <div class="q-question">Who is this AI tool actually for?</div>
+      <div class="q-context">
+        The audience determines almost everything else — security, support, training, and how much it has to be "right" the first time. Be honest about the most ambitious user, not the easiest one.
+      </div>
+      <div class="options-section-label">Pick the closest fit</div>
+      <div class="options" data-options="destination">
+        <button class="option" data-value="me"><span class="option-marker">1</span><div class="option-content"><div class="option-label">Just me</div><div class="option-desc">A personal tool I'll run on my own machine, for my own use.</div></div></button>
+        <button class="option" data-value="team"><span class="option-marker">2</span><div class="option-content"><div class="option-label">My team</div><div class="option-desc">A handful of colleagues — between 5 and 50 people who work alongside me.</div></div></button>
+        <button class="option" data-value="org"><span class="option-marker">3</span><div class="option-content"><div class="option-label">The whole firm (or beyond)</div><div class="option-desc">Everyone in my organisation, or a public-facing audience including clients.</div></div></button>
+      </div>
+      <div class="text-section">
+        <div class="text-section-label">In your own words</div>
+        <div class="text-section-prompt">Who specifically? What do they do? Why this group?</div>
+        <textarea class="text-input" data-text="destination" placeholder="e.g. The three senior accountants on my team who do all the BAS reviews. They're the bottleneck for our SME clients."></textarea>
+        <div class="input-hint">This is your project, in your words. The clearer here, the sharper your final result.</div>
+      </div>
+      <div class="nav">
+        <button class="btn btn-secondary" data-nav="back">← Back</button>
+        <button class="btn btn-primary" data-nav="next" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q2: RECORDS -->
+    <div class="question-screen" data-question="2">
+      <div class="q-letter-row"><span class="q-big-letter">R</span><span class="q-meta">Question 2 of 5 · Records</span></div>
+      <div class="q-keyword">Records</div>
+      <div class="q-question">What kind of data will it touch?</div>
+      <div class="q-context">
+        This decides whether you can use a consumer tool or need an enterprise contract — and whether APES 110, the Privacy Act, and your engagement letters apply. Choose the most sensitive data type it will ever see.
+      </div>
+      <div class="options-section-label">Pick the most sensitive data type</div>
+      <div class="options" data-options="records">
+        <button class="option" data-value="public"><span class="option-marker">1</span><div class="option-content"><div class="option-label">Public or synthetic only</div><div class="option-desc">Public information, dummy data, generic examples. Nothing private to anyone.</div></div></button>
+        <button class="option" data-value="internal"><span class="option-marker">2</span><div class="option-content"><div class="option-label">Internal firm data</div><div class="option-desc">My firm's IP, methodology, internal documents, training material — but no client information.</div></div></button>
+        <button class="option" data-value="client"><span class="option-marker">3</span><div class="option-content"><div class="option-label">Client or regulated data</div><div class="option-desc">Client financials, TFNs, source documents, identifying details, audit material.</div></div></button>
+      </div>
+      <div class="text-section">
+        <div class="text-section-label">In your own words</div>
+        <div class="text-section-prompt">What data exactly? Where does it live today? Who currently has access?</div>
+        <textarea class="text-input" data-text="records" placeholder="e.g. Client trial balances, BAS lodgement data, and prior period working papers. Lives in our practice management system. Currently restricted to the engagement team."></textarea>
+        <div class="input-hint">Be specific. "Client data" is too broad — name the actual records.</div>
+      </div>
+      <div class="nav">
+        <button class="btn btn-secondary" data-nav="back">← Back</button>
+        <button class="btn btn-primary" data-nav="next" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q3: AUTONOMY -->
+    <div class="question-screen" data-question="3">
+      <div class="q-letter-row"><span class="q-big-letter">A</span><span class="q-meta">Question 3 of 5 · Autonomy</span></div>
+      <div class="q-keyword">Autonomy</div>
+      <div class="q-question">How much should it decide on its own?</div>
+      <div class="q-context">
+        The line between an assistant and an agent. Higher autonomy means faster work — and more review burden, more liability, and harder explanations to clients and regulators when something goes wrong.
+      </div>
+      <div class="options-section-label">Pick the level of trust</div>
+      <div class="options" data-options="autonomy">
+        <button class="option" data-value="suggest"><span class="option-marker">1</span><div class="option-content"><div class="option-label">Suggest</div><div class="option-desc">It offers ideas, summaries or options. I make every decision.</div></div></button>
+        <button class="option" data-value="draft"><span class="option-marker">2</span><div class="option-content"><div class="option-label">Draft</div><div class="option-desc">It produces work product — emails, workpapers, analysis — that I review and sign off.</div></div></button>
+        <button class="option" data-value="act"><span class="option-marker">3</span><div class="option-content"><div class="option-label">Act</div><div class="option-desc">It takes actions independently within guardrails — sending, filing, posting, transacting.</div></div></button>
+      </div>
+      <div class="text-section">
+        <div class="text-section-label">In your own words</div>
+        <div class="text-section-prompt">What should it do, and what should always be a human's call?</div>
+        <textarea class="text-input" data-text="autonomy" placeholder="e.g. Drafts the BAS commentary based on the data, flags unusual variances, but the senior reviews and sends to the client."></textarea>
+        <div class="input-hint">The clearer the line between AI and human, the easier it is to defend later.</div>
+      </div>
+      <div class="nav">
+        <button class="btn btn-secondary" data-nav="back">← Back</button>
+        <button class="btn btn-primary" data-nav="next" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q4: FIT -->
+    <div class="question-screen" data-question="4">
+      <div class="q-letter-row"><span class="q-big-letter">F</span><span class="q-meta">Question 4 of 5 · Fit</span></div>
+      <div class="q-keyword">Fit</div>
+      <div class="q-question">How does this sit alongside your existing systems and processes?</div>
+      <div class="q-context">
+        How connected the tool is to your existing systems and processes. A separate tool is a weekend project. An embedded one is a year-long program. Each connection is a dependency you'll need to maintain.
+      </div>
+      <div class="options-section-label">Pick the level of integration</div>
+      <div class="options" data-options="flow">
+        <button class="option" data-value="standalone"><span class="option-marker">1</span><div class="option-content"><div class="option-label">Separate</div><div class="option-desc">Opens on its own, doesn't touch anything else. A chat window, a custom GPT, a self-contained app.</div></div></button>
+        <button class="option" data-value="connected"><span class="option-marker">2</span><div class="option-content"><div class="option-label">Linked</div><div class="option-desc">Talks to one or two systems — Xero, M365, SharePoint, a DMS — for context or output.</div></div></button>
+        <button class="option" data-value="embedded"><span class="option-marker">3</span><div class="option-content"><div class="option-label">Embedded</div><div class="option-desc">Woven through the workflow across multiple systems, triggered by events, part of the plumbing.</div></div></button>
+      </div>
+      <div class="text-section">
+        <div class="text-section-label">In your own words</div>
+        <div class="text-section-prompt">Which systems does it need to talk to? Where does the input come from, and where does the output go?</div>
+        <textarea class="text-input" data-text="flow" placeholder="e.g. Pulls trial balance data from Xero, generates draft commentary, drops it into our review workflow in the practice management system."></textarea>
+        <div class="input-hint">Each system you name is a dependency you'll need to maintain.</div>
+      </div>
+      <div class="nav">
+        <button class="btn btn-secondary" data-nav="back">← Back</button>
+        <button class="btn btn-primary" data-nav="next" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Q5: TRANSFER -->
+    <div class="question-screen" data-question="5">
+      <div class="q-letter-row"><span class="q-big-letter">T</span><span class="q-meta">Question 5 of 5 · Transfer</span></div>
+      <div class="q-keyword">Transfer</div>
+      <div class="q-question">Who do you transfer ownership and responsibility to?</div>
+      <div class="q-context">
+        The question almost everyone forgets. Building it is one thing — handing it over is another. AI tools rot: models change, prompts drift, context shifts, people leave. Decide upfront who takes it on, or be honest that no one will.
+      </div>
+      <div class="options-section-label">Pick the transfer posture</div>
+      <div class="options" data-options="time">
+        <button class="option" data-value="experiment"><span class="option-marker">1</span><div class="option-content"><div class="option-label">No transfer — it stays with me</div><div class="option-desc">An experiment. I'll use it for a while, then probably move on. No formal hand-off.</div></div></button>
+        <button class="option" data-value="owned"><span class="option-marker">2</span><div class="option-content"><div class="option-label">Transferred to a named owner</div><div class="option-desc">A person or small group takes responsibility for keeping it working and current.</div></div></button>
+        <button class="option" data-value="product"><span class="option-marker">3</span><div class="option-content"><div class="option-label">Transferred to a funded function</div><div class="option-desc">A product team holds it — roadmap, support, security, lifecycle management. The full kit.</div></div></button>
+      </div>
+      <div class="text-section">
+        <div class="text-section-label">In your own words</div>
+        <div class="text-section-prompt">Who specifically takes it on? What does the hand-off actually look like?</div>
+        <textarea class="text-input" data-text="time" placeholder="e.g. I run it for the first six months. After that, the practice manager picks it up with quarterly reviews and a clear escalation path if it breaks."></textarea>
+        <div class="input-hint">Vague ownership is no ownership. Name a person or accept it's an experiment.</div>
+      </div>
+      <div class="nav">
+        <button class="btn btn-secondary" data-nav="back">← Back</button>
+        <button class="btn btn-primary" data-nav="next" disabled>See my build plan →</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="result-screen" id="result">
+      <div class="result-eyebrow">Your AI dream is...</div>
+      <div class="result-project" id="resultProject"></div>
+      <h2 class="result-archetype" id="resultName"></h2>
+      <p class="result-summary" id="resultSummary"></p>
+
+      <!-- BUILD COMPLEXITY HERO -->
+      <div class="complexity-hero" id="complexityHero">
+        <div class="complexity-band">
+          <div class="complexity-marker" id="complexityMarker">
+            <div class="complexity-icon" id="complexityIcon"></div>
+            <div class="complexity-tier" id="complexityTier"></div>
+          </div>
+          <div class="complexity-body">
+            <div class="complexity-title" id="complexityTitle"></div>
+            <div class="complexity-blurb" id="complexityBlurb"></div>
+            <div class="complexity-tags" id="complexityTags"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT NOW PROMPT BOX -->
+      <div class="prompt-box" id="promptBox">
+        <div class="prompt-box-header">
+          <div>
+            <div class="prompt-box-eyebrow">Try it now — copy this prompt</div>
+            <div class="prompt-box-title">Build it by talking to AI</div>
+          </div>
+          <button class="prompt-copy-btn" id="promptCopyBtn">📋 Copy</button>
+        </div>
+        <div class="prompt-box-body" id="promptBoxBody"></div>
+        <div class="prompt-box-footer">
+          Open the agent / GPT / Project builder, take a screenshot, paste it back with this prompt and your idea. Done in 30 seconds.
+        </div>
+      </div>
+
+      <!-- CHANGE BANNER -->
+      <div class="change-banner" id="changeBanner">
+        <strong id="changeBannerLabel">What changed</strong>
+        <span id="changeBannerText"></span>
+      </div>
+
+      <!-- ITERATE BAR -->
+      <div class="iterate-bar">
+        <button class="iterate-btn simpler" id="simplerBtn">
+          <div class="iterate-icon">←</div>
+          <div class="iterate-content">
+            <div class="iterate-label">Love it, but simpler</div>
+            <div class="iterate-desc">Scope it down. Build the smallest useful version first.</div>
+          </div>
+        </button>
+        <button class="iterate-btn bigger" id="biggerBtn">
+          <div class="iterate-icon">→</div>
+          <div class="iterate-content">
+            <div class="iterate-label">More ambitious</div>
+            <div class="iterate-desc">What this looks like at the next level up.</div>
+          </div>
+        </button>
+      </div>
+
+      <!-- NEXT STEP -->
+      <div class="next-step-box">
+        <h3>Your next step</h3>
+        <p id="resultNext"></p>
+      </div>
+
+      <!-- CANVAS -->
+      <div class="canvas-section">
+        <h3>Your D.R.A.F.T. canvas</h3>
+        <div id="canvasRows"></div>
+      </div>
+
+      <!-- BUILD + WATCH-OUTS -->
+      <div class="result-grid">
+        <div class="result-section">
+          <h3>What you'll need</h3>
+          <ul id="resultBuild"></ul>
+        </div>
+        <div class="result-section">
+          <h3>Watch-outs for your project</h3>
+          <ul id="resultWatch"></ul>
+        </div>
+      </div>
+
+      <!-- RISK (now secondary) -->
+      <div class="risk-callout" id="riskCallout">
+        <div class="risk-block">
+          <div class="risk-label">Risk profile</div>
+          <div class="risk-level" id="riskLevel"></div>
+        </div>
+        <div class="risk-text" id="riskText"></div>
+      </div>
+
+      <!-- STEP 2 CTA -->
+      <button class="step2-cta" id="goToStackBtn">
+        <div class="step2-cta-content">
+          <div class="step2-cta-eyebrow">Step 2</div>
+          <div class="step2-cta-title">Build your S.T.A.C.K.</div>
+          <div class="step2-cta-blurb">Now you know what you're building. See the five ingredients you'll need to actually ship it — tailored to your tier.</div>
+        </div>
+        <div class="step2-cta-arrow">→</div>
+      </button>
+
+      <div class="result-nav">
+        <div class="result-nav-group">
+          <button class="btn btn-secondary" id="restartBtn">↺ Start over</button>
+          <button class="btn btn-secondary" id="changeBtn">← Edit answers</button>
+        </div>
+        <div class="result-nav-group">
+          <button class="btn btn-secondary" id="copyBtn">📋 Copy summary</button>
+          <button class="btn btn-primary" id="printBtn">🖨 Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: STACK SCREEN -->
+    <div class="stack-screen" id="stackScreen">
+      <div class="stack-header">
+        <div class="stack-header-meta">
+          <span class="stack-eyebrow">Step 2 of 2 · Build your stack</span>
+          <div class="stack-project" id="stackProject"></div>
+        </div>
+        <button class="btn btn-secondary" id="backToDraftBtn">← Back to Step 1</button>
+      </div>
+
+      <h2 class="stack-title">Your <em>S.T.A.C.K.</em></h2>
+      <p class="stack-subtitle">Five ingredients every AI app needs. Here's what each looks like for a <strong id="stackTierName"></strong>.</p>
+
+      <div class="stack-tier-banner" id="stackTierBanner">
+        <div class="stack-tier-icon" id="stackTierIcon"></div>
+        <div class="stack-tier-text">
+          <div class="stack-tier-label" id="stackTierLabel"></div>
+          <div class="stack-tier-tags" id="stackTierTags"></div>
+        </div>
+      </div>
+
+      <!-- Iteration buttons live here too -->
+      <div class="iterate-bar">
+        <button class="iterate-btn simpler" id="stackSimplerBtn">
+          <div class="iterate-icon">←</div>
+          <div class="iterate-content">
+            <div class="iterate-label">Love it, but simpler</div>
+            <div class="iterate-desc">Scope it down and watch the stack shrink.</div>
+          </div>
+        </button>
+        <button class="iterate-btn bigger" id="stackBiggerBtn">
+          <div class="iterate-icon">→</div>
+          <div class="iterate-content">
+            <div class="iterate-label">More ambitious</div>
+            <div class="iterate-desc">Step it up and see what gets added.</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="change-banner" id="stackChangeBanner">
+        <strong id="stackChangeBannerLabel">What changed</strong>
+        <span id="stackChangeBannerText"></span>
+      </div>
+
+      <div class="stack-cards" id="stackCards"></div>
+
+      <!-- ARCHITECTURE TOGGLE -->
+      <button class="architecture-toggle" id="architectureToggleBtn" aria-expanded="false">
+        <div class="architecture-toggle-content">
+          <div class="architecture-toggle-eyebrow">Optional</div>
+          <div class="architecture-toggle-title">Show me how it all connects</div>
+          <div class="architecture-toggle-blurb">A simple architecture diagram of your stack — labelled with the tools that fit your tier.</div>
+        </div>
+        <div class="architecture-toggle-chevron" id="archChevron">▾</div>
+      </button>
+
+      <div class="architecture-section" id="architectureSection">
+        <div class="architecture-header">
+          <div class="architecture-eyebrow">A simple architecture · for your tier</div>
+          <div class="architecture-caption" id="architectureCaption"></div>
+        </div>
+        <div class="architecture-svg-wrap">
+          <svg id="architectureSvg" viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture diagram"></svg>
+        </div>
+        <div class="architecture-legend">
+          <div class="architecture-legend-item"><span class="legend-swatch user"></span>User</div>
+          <div class="architecture-legend-item"><span class="legend-swatch auth"></span>Auth gateway</div>
+          <div class="architecture-legend-item"><span class="legend-swatch compute"></span>Compute (your app)</div>
+          <div class="architecture-legend-item"><span class="legend-swatch thoughts"></span>Thoughts (LLM)</div>
+          <div class="architecture-legend-item"><span class="legend-swatch storage"></span>Storage (data)</div>
+          <div class="architecture-legend-item"><span class="legend-swatch kpis"></span>KPIs (observability)</div>
+        </div>
+        <div class="architecture-disclaimer">
+          This is a teaching diagram, not a technical specification. The shape stays the same as you scale; the tool labels are what change.
+        </div>
+      </div>
+
+      <div class="next-step-box">
+        <h3>Pick the layer that's missing</h3>
+        <p>You don't need all five layers at once. Look at where you are now versus where you want to be — the gap is your next experiment. The smallest useful upgrade is usually one layer at a time.</p>
+      </div>
+
+      <div class="result-nav">
+        <div class="result-nav-group">
+          <button class="btn btn-secondary" id="stackRestartBtn">↺ Start over</button>
+          <button class="btn btn-secondary" id="stackBackBtn">← Back to Step 1</button>
+        </div>
+        <div class="result-nav-group">
+          <button class="btn btn-secondary" id="stackCopyBtn">📋 Copy summary</button>
+          <button class="btn btn-primary" id="stackPrintBtn">🖨 Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
