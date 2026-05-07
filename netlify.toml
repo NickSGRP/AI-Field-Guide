@@ -3,15 +3,6 @@
 
 # No build command — pure static site
 
-# ─── Redirects ───────────────────────────────────────────────────────────────
-
-# Hard 404 for anything that doesn't exist (keeps the 200 fallback off assets)
-[[redirects]]
-  from = "/*"
-  to   = "/index.html"
-  status = 404
-  force = false   # only fires when the file isn't found
-
 # ─── Security headers (applied to every response) ────────────────────────────
 
 [[headers]]
@@ -40,7 +31,7 @@
       default-src 'none';
       script-src 'self' https://plausible.io;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      font-src https://fonts.gstatic.com;
+      font-src 'self' https://fonts.gstatic.com;
       img-src 'self' data:;
       connect-src https://plausible.io;
       frame-ancestors 'none';
