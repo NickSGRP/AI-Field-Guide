@@ -73,22 +73,22 @@ The whole experience is designed to be completed in 10 minutes. The output is a 
 ## Screenshots
 
 ### Intro
-![Intro screen](docs/images/01-intro.png)
+![Intro screen](images/01-intro.png)
 
 ### A question — Destination
-![Destination question](docs/images/02-question-destination.png)
+![Destination question](images/02-question-destination.png)
 
 ### Step 1 result — your archetype, tier, and example prompt
-![Step 1 result](docs/images/03-result-step1.png)
+![Step 1 result](images/03-result-step1.png)
 
 ### Step 2 — your S.T.A.C.K.
-![Step 2 stack](docs/images/04-stack-step2.png)
+![Step 2 stack](images/04-stack-step2.png)
 
 ### The architecture diagram (opt-in)
-![Architecture diagram](docs/images/05-architecture.png)
+![Architecture diagram](images/05-architecture.png)
 
 ### The "Right Now!" tier — ship something today
-![Right Now tier](docs/images/06-right-now.png)
+![Right Now tier](images/06-right-now.png)
 
 ---
 
