@@ -1,0 +1,71 @@
+[build]
+  publish = "."
+
+# No build command — pure static site
+
+# ─── Redirects ───────────────────────────────────────────────────────────────
+
+# Hard 404 for anything that doesn't exist (keeps the 200 fallback off assets)
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 404
+  force = false   # only fires when the file isn't found
+
+# ─── Security headers (applied to every response) ────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent framing
+    X-Frame-Options = "DENY"
+
+    # Block MIME sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # Send origin only, no full referrer URL to third parties
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Lock down browser features not used by this site
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Content Security Policy
+    # - scripts: self + Plausible (analytics)
+    # - styles: self + Google Fonts CDN + inline (needed for style= attributes)
+    # - fonts: Google Fonts origin
+    # - images: self + data URIs
+    # - analytics beacon to Plausible
+    # - no framing from any origin
+    Content-Security-Policy = """
+      default-src 'none';
+      script-src 'self' https://plausible.io;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src https://fonts.gstatic.com;
+      img-src 'self' data:;
+      connect-src https://plausible.io;
+      frame-ancestors 'none';
+      base-uri 'self';
+      form-action 'self'
+    """
+
+# ─── Cache headers for static assets ─────────────────────────────────────────
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
